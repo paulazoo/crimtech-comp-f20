@@ -1,10 +1,8 @@
 import random
 
 def random_ints():
-    # Your code here!
     l = []
     x = 0
-
     while x != 6:
         x = random.randint(1, 10)
         l.append(x)
