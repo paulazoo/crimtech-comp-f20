@@ -162,9 +162,17 @@ def main():
         
         if (snake.body[0] == apple.position):
             apple = Apple()
+            score = score + 1
 
         screen.blit(surface, (0,0))
-        # TODO: see section 8, "Display the Score"
+
+        green = (0, 255, 0) 
+        blue = (0, 0, 128) 
+        font = pygame.font.Font('freesansbold.ttf', 32)
+        text = font.render(str(score), True, green, blue) 
+        textRect = text.get_rect()
+        textRect.center = (15, 15) 
+        screen.blit(text, textRect)
 
         pygame.display.update()
         if snake.dead:
