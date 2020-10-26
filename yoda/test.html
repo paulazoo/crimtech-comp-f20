@@ -9,12 +9,26 @@
         console.log("You found me!");
         function square(i) {
             // Your code here!
-            return 0
+            if (typeof i !== "number") {
+                return -1
+            }
+            return i*i
         }
 
         function numberString(i) {
             // Your code here!
-            return ""
+            if (!Number.isInteger(i)) {
+                return "Not Integer"
+            }
+            if (i <= 0) {
+                return "Not positive"
+            }
+            let x = ""
+            for (j = 1; j <=i; j++)
+            {
+                x = x + j.toString()
+            }
+            return x
         }
     </script>
 </body>

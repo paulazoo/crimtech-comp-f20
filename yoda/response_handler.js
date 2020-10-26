@@ -1,6 +1,6 @@
 // Declaring variables that you may want to use.
-let names = ['cute', 'regular'];
-let moods = ['dark', 'force', 'std'];
+// let names = ['cute', 'regular'];
+// let moods = ['dark', 'force', 'std'];
 
 let dark_quotes = ["Once you start down the dark path, forever will it dominate your destiny, consume you it will.",
 "In a dark place we find ourselves, and a little more knowledge lights our way.",
@@ -20,6 +20,45 @@ let std_quotes = ["Patience you must have, my young padawan.",
 ];
 
 function respond() {
-    // Your Code Here
-    console.log("Hello World!");
+    
+    const getRandHm = () => {
+        let mAmount = Math.floor(Math.random() * 50);
+        let ms = "m"
+        let hmmFinal = "h" + (ms.repeat(mAmount))
+        return hmmFinal
+    }
+
+    const getRandQuote = (quotesList) => {
+        return quotesList[Math.floor(Math.random() * quotesList.length)];
+    }
+
+
+    let input = document.getElementById("textbox").value;
+    console.log(input)
+
+    let yodaHm = getRandHm()
+
+    let yodaQuote = getRandQuote(std_quotes)
+
+    let imgFirst = 'regular-'
+    let imgSecond = 'std'
+    if (input.includes('force')) {
+        imgSecond = 'force'
+        yodaQuote = getRandQuote(force_quotes)
+    }
+    if (input.includes('force') && input.includes('dark')) {
+        imgSecond = 'dark'
+    }
+    if (input.includes('dark')) {
+        yodaQuote = getRandQuote(dark_quotes)
+    }
+
+    if (input.includes("cute") || input.includes("baby")) {
+        imgFirst = 'cute-'
+        yodaQuote = ''
+    }
+
+    document.getElementById('yoda-pic').src='img/'+imgFirst+imgSecond+'.jpg';
+    document.getElementById("yoda-response").innerHTML=yodaHm + ' ' + yodaQuote
+    document.getElementById("textbox").value = "";
 }
