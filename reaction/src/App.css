@@ -29,7 +29,11 @@
 }
 
 .PanelContainer {
-  /* TODO: Your CSS Here! */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 70vh;
 }
 
 .Panel {
