@@ -6,7 +6,14 @@ import './App.css';
 class Panel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { start_time: 0, ran_once: false, counting: false, true_duration: 0, reaction_time: 0, color: 'green'};
+    this.state = {
+      start_time: 0,
+      ran_once: false,
+      counting: false,
+      true_duration: 0,
+      reaction_time: 0,
+      color: 'green'
+    };
     this.process_click = this.process_click.bind(this);
   }
 
@@ -45,7 +52,6 @@ class Panel extends React.Component {
   }
   
   render() {
-    
     let msg;
     if (this.state.counting) {
       if (this.state.color !== 'green')
